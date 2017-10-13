@@ -41,5 +41,18 @@ namespace GummiBearKingdom.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Edit(int id)
+        {
+            var thisCategory = db.Categories.FirstOrDefault(category => category.CategoryId == id);
+            return View(thisCategory);
+        }
+        [HttpPost]
+        public IActionResult Edit(Category category)
+        {
+            db.Entry(category).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
