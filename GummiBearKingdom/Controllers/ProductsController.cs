@@ -19,8 +19,8 @@ namespace GummiBearKingdom.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var productList = db.Products.ToList();
-            return View(productList);
+            var list = db.Categories.Include(category => category.Products).ToList();
+            return View(list);
         }
 
         public IActionResult Details(int id)
