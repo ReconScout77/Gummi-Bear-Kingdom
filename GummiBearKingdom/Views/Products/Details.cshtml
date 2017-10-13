@@ -1,0 +1,27 @@
+﻿@model GummiBearKingdom.Models.Product
+
+@{
+    ViewData["Title"]="Product Details";
+}
+
+<div class="card mb-3 text-center">
+	<div class="card-header">
+        <h2>@Html.DisplayFor(model => model.Name) Details</h2>
+	</div>
+    <div class="card-block"> 
+
+        <ul class="list-group list-group-flush align-items-center">
+            <li class="list-group-item">$@Html.DisplayFor(model => model.Cost).00</li>
+            <li class="list-group-item">@Html.DisplayFor(model => model.CountryOfOrigin)</li>
+			<li class="list-group-item">@Html.DisplayFor(model => model.Category.Name)</li>
+        </ul>
+    </div>
+   
+	<div class="d-flex justify-content-center">
+        <div class="p-2"><h6>@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId })</h6></div>
+        <div class="p-2"><h6>@Html.ActionLink("Delete", "Delete", new { id = Model.ProductId })</h6></div>
+    </div>
+</div>
+
+
+<p class="back">@Html.ActionLink("Back to products", "Index")</p>

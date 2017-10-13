@@ -29,4 +29,9 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20171013184132_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20171013184132_Initial.cs" />
+    <Compile Remove="Migrations\GummiBearKingdomContextModelSnapshot.cs" />
+  </ItemGroup>
 </Project>

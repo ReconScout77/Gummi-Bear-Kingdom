@@ -1,2 +1,26 @@
-﻿@{
+﻿@model IEnumerable<GummiBearKingdom.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+    ViewData["PageHead"] = "Products";
 }
+
+<div class="card-deck"> 
+    @foreach(var product in Model)
+    {
+
+        <div class="card mb-3 text-center">
+		    <div class="card-header">
+                <h4>@Html.DisplayFor(model => product.Name)</h4>
+		    </div>
+            <div class="card-block">
+			    <h6>$@Html.DisplayFor(model => product.Cost).00</h6>
+                <footer>
+			        @Html.ActionLink("Details", "Details", new { id = product.ProductId })
+                    | @Html.ActionLink("Edit", "Edit", new { id = product.ProductId })
+                    | @Html.ActionLink("Delete", "Delete", new { id = product.ProductId })
+                </footer>
+            </div>
+        </div>
+    }
+</div>
+<h6>@Html.ActionLink("Add new Product", "Create")</h6>

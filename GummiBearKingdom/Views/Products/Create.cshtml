@@ -1,0 +1,51 @@
+﻿@model GummiBearKingdom.Models.Product
+
+@{
+    ViewData["Title"] = "Add New Product";
+}
+
+<h2>Add a New Product</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="card">
+        <div class="card-block">
+            <div class="d-flex justify-content-center">
+                <div class="p-2">
+                    <label>@Html.LabelFor(model => model.Category):</label>
+                    @Html.DropDownList("CategoryId")
+                </div>
+			</div>
+			<div class="d-flex justify-content-center">
+                <div class="p-2"> 
+                    <label>@Html.LabelFor(model => model.Name):</label>
+                </div>
+				<div class="p-2"> 
+                    @Html.TextBoxFor(model => model.Name, new {@class="form-control"})
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="p-2">
+                    <div class="d-flex">
+                        <label class="p-2">@Html.LabelFor(model => model.Cost):</label>
+                        <div class="p-2">@Html.TextBoxFor(model => model.Cost, new {type="number"})</div>
+                    </div>
+                </div>
+            </div> 
+            <div class="d-flex justify-content-center"> 
+                <label class="p-2">@Html.LabelFor(model => model.CountryOfOrigin):</label>
+                <div class="p-2"> 
+                    @Html.TextBoxFor(model => model.CountryOfOrigin, new {@class="form-control"})
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="p-2">
+                    <input type="submit" value="Create" class="btn btn-primary">
+				</div>
+			</div>
+        </div> 
+    </div> 
+
+}
+
+<p class="back">@Html.ActionLink("Back to product list", "Index")</p>
