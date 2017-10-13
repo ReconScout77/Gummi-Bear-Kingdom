@@ -1,0 +1,15 @@
+﻿@model IEnumerable<GummiBearKingdom.Models.Category>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>Categories</h1>
+
+@foreach(var category in Model)
+{
+    <div class="card card-outline-primary mb-3 text-center">
+	    <div class="card-block">
+		    <h4>@Html.DisplayFor(model => category.Name)</h4>
+		</div>
+	</div>
+}
