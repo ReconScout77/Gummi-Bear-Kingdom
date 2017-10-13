@@ -10,7 +10,8 @@
 	    <div class="card-block">
 		    <h4>@Html.DisplayFor(model => category.Name)</h4>
 		    <footer>
-                @Html.ActionLink("Edit", "Edit", new { id = category.CategoryId })
+			    @Html.ActionLink("Products", "Details", new { id = category.CategoryId })
+                | @Html.ActionLink("Edit", "Edit", new { id = category.CategoryId })
 			    | @Html.ActionLink("Delete", "Delete", new { id = category.CategoryId })
 			</footer>
 		</div>

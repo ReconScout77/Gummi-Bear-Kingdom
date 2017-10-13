@@ -1,5 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model GummiBearKingdom.Models.Category
+
+@{  
+    ViewData["Title"] = "Products in Category";
 }
+
+<h1 class="text-center">All @Html.DisplayFor(model => model.Name) Products</h1>
+
+<div class="card-deck">
+    @foreach(var product in Model.Products)
+    {
+        <div class="card text-center">
+            <div class="card-header">
+                <h4 class="card-title">@Html.ActionLink((string)product.Name, "Details", "Products", new { id = product.ProductId})</h4>
+            </div>
+            <div class="card-block">
+              <p class="card-text">$@Html.DisplayFor(model => product.Cost).00</p>
+            </div>
+        </div>        
+    }
+</div>
+
+<h5> @Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })
+    | @Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</h5>
+<p class="back">@Html.ActionLink("Back to categories", "Index")</p>
