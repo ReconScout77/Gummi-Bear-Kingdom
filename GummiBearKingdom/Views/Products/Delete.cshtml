@@ -1,0 +1,16 @@
+﻿@model GummiBearKingdom.Models.Product
+
+@{  
+    ViewData["Title"] = "Product Deletion";
+}
+
+<h1 class="text-center">Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="d-flex justify-content-center">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </div> 
+}
+
+<p class="back">@Html.ActionLink("Back to product list", "Index")</p>

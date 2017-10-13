@@ -59,6 +59,7 @@ namespace GummiBearKingdom.Controllers
             var thisCategory = db.Categories.FirstOrDefault(category => category.CategoryId == id);
             return View(thisCategory);
         }
+
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
