@@ -1,0 +1,18 @@
+﻿@model GummiBearKingdom.Models.Category
+
+@{  
+    ViewData["Title"] = "Category Deletion";
+}
+
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h2>
+<h5>(Doing so will delete all products in this category.)</h5>
+
+
+@using (Html.BeginForm())
+{
+    <div class="d-flex justify-content-center">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </div> 
+}
+
+<p class="back">@Html.ActionLink("Back to category list", "Index")</p>
